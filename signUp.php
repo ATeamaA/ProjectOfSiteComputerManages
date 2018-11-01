@@ -50,7 +50,7 @@
       $_SESSION['logged_user'] = $dataBoutUser;
       $mysqli->query("SET NAMES 'utf8'");
       $mysqli->query("INSERT INTO `users` (`login`, `password`, `email`, `xCode`, `rights`) VALUES ('".$data['login']."', '".$data['password']."', '".$data['email']."', 0, 'user')");
-      echo '<div style="color: green;">You have done registeration</div>';
+      echo '<script>document.location.href="index.php"</script>';
     }
     else
     {
