@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Ноя 01 2018 г., 07:06
+-- Время создания: Ноя 01 2018 г., 07:54
 -- Версия сервера: 5.7.20-log
 -- Версия PHP: 7.2.0
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 -- Структура таблицы `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `login` varchar(24) NOT NULL,
@@ -36,6 +37,19 @@ CREATE TABLE `users` (
   `xCode` int(11) NOT NULL,
   `rights` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Очистить таблицу перед добавлением данных `users`
+--
+
+TRUNCATE TABLE `users`;
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT DELAYED INTO `users` (`id`, `login`, `password`, `email`, `xCode`, `rights`) VALUES
+(1, 'ishkining', 'password', 'ishkining@mail.ru', 0, 'user'),
+(2, 'Andrey', 'admin', 'test@mail.ru', 0, 'user');
 
 --
 -- Индексы сохранённых таблиц
@@ -56,7 +70,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
