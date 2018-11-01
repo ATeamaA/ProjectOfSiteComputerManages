@@ -41,6 +41,7 @@
     {
       $dataBoutUser[] = $data['login'];
       $dataBoutUser[] = $data['password'];
+      $dataBoutUser[] = $data['email'];
       $_SESSION['logged_user'] = $dataBoutUser;
       $mysqli->query("SET NAMES 'utf8'");
       $mysqli->query("INSERT INTO `users` (`login`, `password`, `email`, `xCode`, `rights`) VALUES ('".$data['login']."', '".$data['password']."', '".$data['email']."', 0, 'user')");
