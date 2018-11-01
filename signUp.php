@@ -1,15 +1,27 @@
 <?
   require "db/connection.php";
 ?>
-<div>
-  <form method="POST">
-    <input name='login' type="text" placeholder="username" />
-    <input name="email" type="email" placeholder="email"/>
-    <input name="password" type="password" placeholder="password"/>
-    <input name="passwordRe" type="password" placeholder="password"/>
-    <input name="signUp" type="submit" value="Check">
-  </form>
-</div>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="css/signUpIn.css">
+</head>
+<body>
+  <div class="field_sign_up_in">
+    <form method="POST">
+      <input name='login' type="text" placeholder="username" />
+      <input name="email" type="email" placeholder="email"/>
+      <input name="password" type="password" placeholder="password"/>
+      <input name="passwordRe" type="password" placeholder="password"/>
+      <input name="signUp" type="submit" value="Check">
+    </form>
+  </div>
+</body>
+</html>
+
 <?
   $data = $_POST;
   $arrayOfData[0] = getFromAttribute($arrayOfData[0], 'login', 'users');
