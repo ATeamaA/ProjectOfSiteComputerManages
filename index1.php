@@ -59,4 +59,3 @@
   }
   $mysqli->close();
 ?>
-<a href="signUp.php">Link</a>
