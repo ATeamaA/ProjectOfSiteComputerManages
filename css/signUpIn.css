@@ -1,0 +1,13 @@
+.field_sign_up_in {
+	width: 250px;
+	background-color: #f9f9f9;
+	margin: 100px auto;
+}
+.field_sign_up_in input {
+	margin-bottom: 10px;
+	width: 248px;
+	height: 30px;
+	border: 2px groove red;
+	border-radius: 10px 10px;
+	box-shadow: 0 0 15px #ff5050;
+}
