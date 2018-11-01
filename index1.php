@@ -25,5 +25,6 @@
   {
     showProducts($arrayOfData[0][$i], $arrayOfData[1][$i], $arrayOfData[2][$i], $arrayOfData[3][$i], $arrayOfData[4][$i]);
   }
+  $mysqli->close();
 ?>
 <a href="signUp.php">Link</a>
