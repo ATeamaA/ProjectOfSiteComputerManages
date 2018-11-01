@@ -38,7 +38,7 @@
 		<?
 			$arrayOfData[0] = getFromAttribute($arrayOfData[0], 'type', 'Types');
 			$arrayOfData[1] = getFromAttribute($arrayOfData[1], 'img', 'Types');
-			echo '<div class="list">\
+			echo '<div class="list">
 							<h4>Категории</h4>';
 			foreach($arrayOfData[0] as $value)
 			{
@@ -56,6 +56,7 @@
 									<img src="'.$arrayOfData[1][$i].'" alt="'.$arrayOfData[0][$i].'" height="250px" width="190px">
 								</div>';
 				}
+				$mysqli->close();
 			?>
 		</div>
 		<div class="banner">
