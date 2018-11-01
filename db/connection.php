@@ -1,5 +1,7 @@
 <?
   session_start();
+  $mysqli = new mysqli("localhost", "root", "", "ComputerConsuming");
+	$mysqli->query("SET NAMES 'utf8'");
   function getFromDB($exampleDB)
 	{
 		while(($row = $exampleDB->fetch_assoc()) != false)
