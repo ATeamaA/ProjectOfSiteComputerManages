@@ -2,7 +2,6 @@
   require "db/connection.php"; // Подключение сессии и функционала
 ?>
 
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,16 +11,12 @@
 </head>
 <body>
   <div class="field_sign_up_in">
-=======
 <!--Форма авторизации-->
-<div>
->>>>>>> b0af48dac3f269a947e300922768817db63820a4
   <form method="POST">
     <input name='login' type="text" placeholder="username" />
     <input name="password" type="password" placeholder="password"/>
     <input name="signIn" type="submit" value="Check">
   </form>
-</div>
 </body>
 </html>
 
