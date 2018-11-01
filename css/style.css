@@ -1,0 +1,136 @@
+﻿body {
+	font-family: 'Roboto', sans-serif;
+	width:1000px;
+	height: 1350px;
+	margin: auto;
+}
+a {
+	color: black;
+	text-decoration: none;
+	text-shadow: 0 0 15px #ff5050;
+	font-size: 24px;
+}
+
+h4 {
+	text-shadow: 0 0 15px #ff5050;
+	font-size: 24px;
+	margin: 10px 0;
+}
+/*header*/
+header {
+	height: 200px;
+}
+.logo {
+	margin: 30px;
+	width: 200px;
+	height: 65px;
+	position: relative;
+	display: inline-block;
+}
+.search {
+	display: inline-block;
+	float: right;
+	margin:45px 30px 0px 0px;
+	padding: 0;	
+}
+.search_string {
+	width: 500px;
+	border: 2px groove red;
+	border-radius: 40px 10px;
+	box-shadow: 0 0 15px #ff5050;
+}
+.search_button {
+	width: 80px;
+	border: 2px groove red;
+	border-radius: 40px 10px;
+	box-shadow: 0 0 15px #ff5050;
+}
+nav {
+	border: 3px groove red;
+	border-radius: 30px 30px;
+	box-shadow: 0 0 15px #ff5050;
+}
+.left_nav {
+	text-shadow: 0 0 15px #ff5050;
+	font-size: 24px;
+	margin: 15px;
+	display: inline-block;
+}
+.left_nav a {
+	font-size: 20px;
+	margin: 10px;
+}
+.right_nav {
+	display: inline-block;
+	text-shadow: 0 0 15px #ff5050;
+	font-size: 24px;
+	margin: 15px;
+	float: right;
+}
+.right_nav img {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: auto 10px;
+}
+.right_nav p {
+	display: inline-block;
+	text-shadow: 0 0 15px #ff5050;
+	font-size: 18px;
+	margin-top: auto;
+}
+
+/*article*/
+article {
+	height: 800px;
+	width: 1000px;
+	display: inline-block;
+}
+.list {
+	display: inline-block;
+	width: 150px;
+	height: 250px;
+	margin: 30px;
+}
+.list a {
+	font-size: 18px;
+}
+.list_push {
+	margin: 15px 0;
+}
+.content {
+	display: inline-block;
+	width: 600px;
+	float: right;
+	margin: 30px 100px 0 0;
+}
+.content div {
+	height: 250px;
+	width: 190px;
+	display: inline-block;
+	margin: 30px auto;
+	background-color: #909090;
+}
+.banner {
+	height: 92px;
+	width: 720px;
+	margin: auto;
+}
+
+/*footer*/
+
+footer {
+	height: 350px;
+}
+.info {
+	width: 1000px;
+	height: 250px;
+	margin: auto;	
+}
+.info div {
+	height: 250px;
+	width: 240px;
+	display: inline-block;
+	margin: auto;
+	background-color: #909090;
+}
