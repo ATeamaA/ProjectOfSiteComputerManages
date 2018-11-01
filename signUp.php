@@ -15,6 +15,7 @@
   $data = $_POST;
   $arrayOfData[0] = getFromAttribute($arrayOfData[0], 'login');
   $arrayOfData[1] = getFromAttribute($arrayOfData[1], 'password');
+  print_r($arrayOfData[0]);
   if(isset($data['signUp']))
   {
     $errors = array();
@@ -53,4 +54,5 @@
       echo '<div style="color: red;">'.array_shift($errors).'</div><hr>';
     }
   }
+  $mysqli->close();
 ?>
