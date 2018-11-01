@@ -2,14 +2,12 @@
   require "db/connection.php";
 ?>
 <div>
-  <div>
-    <form method="POST">
-      <input name='login' type="text" placeholder="username" />
-      <input name="password" type="password" placeholder="password"/>
-      <input name="email" type="email" placeholder="email"/>
-      <input name="signUp" type="submit" value="Check">
-    </form>
-  </div>
+  <form method="POST">
+    <input name='login' type="text" placeholder="username" />
+    <input name="password" type="password" placeholder="password"/>
+    <input name="email" type="email" placeholder="email"/>
+    <input name="signUp" type="submit" value="Check">
+  </form>
 </div>
 <?
   $data = $_POST;
