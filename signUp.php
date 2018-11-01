@@ -4,8 +4,9 @@
 <div>
   <form method="POST">
     <input name='login' type="text" placeholder="username" />
-    <input name="password" type="password" placeholder="password"/>
     <input name="email" type="email" placeholder="email"/>
+    <input name="password" type="password" placeholder="password"/>
+    <input name="passwordRe" type="password" placeholder="password"/>
     <input name="signUp" type="submit" value="Check">
   </form>
 </div>
@@ -36,8 +37,12 @@
     {
       $errors[] = "Set your password";
     }
+    if(trim($data['password']) == trim($data['passwordRe']))
+    {
+      $errors[] = "These passwords are not similar";
+    }
 
-    if( empty($errors))
+    if(empty($errors))
     {
       $dataBoutUser[] = $data['login'];
       $dataBoutUser[] = $data['password'];
