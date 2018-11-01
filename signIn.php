@@ -13,7 +13,8 @@
 <?
 $arrayOfData[0] = getFromAttribute($arrayOfData[0], 'login', 'users');
 $arrayOfData[1] = getFromAttribute($arrayOfData[1], 'password', 'users');
-if(isset($data['do_login']))
+$data = $_POST;
+if(isset($data['signIn']))
 {
   $checkLogin;
   for($i = 0; $i < count($arrayOfData[0]); $i++)
@@ -23,6 +24,7 @@ if(isset($data['do_login']))
       $checkLogin = 1;
       $dataBoutUser[] = $arrayOfData[0][$i];
       $dataBoutUser[] = $arrayOfData[1][$i];
+      print_r($dataBoutUser);
       break;
     }
     else
@@ -33,12 +35,12 @@ if(isset($data['do_login']))
   if($checkLogin)
   {
     $_SESSION['logged_user'] = $dataBoutUser;
-    echo '<div style="color: green">You are log in</div>';
+    echo 'Win<script>document.location.href="index.php"</script>';
   }
   else
   {
     echo '<div style="color: red">You are not log in</div>';
   }
-  }
+}
   $mysqli->close();
 ?>
