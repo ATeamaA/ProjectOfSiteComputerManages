@@ -29,4 +29,10 @@
             <p>Price - '.$price.' ; Producer - '.$producer.'</p>
           </div>';
   }
+  function showTypesOfProducts($title, $image)
+  {
+    echo '<div class="window_one">
+            <img src="'.$image.'" alt="'.$title.'">
+          </div>';
+  }
 ?>
