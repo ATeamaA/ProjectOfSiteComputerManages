@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Ноя 01 2018 г., 10:41
+-- Время создания: Ноя 01 2018 г., 18:22
 -- Версия сервера: 5.7.20-log
 -- Версия PHP: 7.2.0
 
@@ -52,7 +52,8 @@ TRUNCATE TABLE `Product`;
 
 INSERT INTO `Product` (`id`, `title`, `image`, `description`, `price`, `producer`, `type`) VALUES
 (1, '13.3 Ультрабук Acer Aspire S 13 S5-371-33RL черный', 'img/imgForElements/1.jpg', 'Прекрасный Ultrabook с диагональю 13,3 дюйма и компактным дизайном благодаря технологии порта MagicFlip', 62999, 'China', 'Notebook'),
-(2, '14.1 Нетбук Prestigio Smartbook 141S синий', 'img/imgForElements/2.jpg', 'Благодаря компактным размерам и небольшому весу всего в 1.4 кг Smartbook 141S станет незаменимым помощником, если вам необходимо поехать на деловую встречу, поработать в кафе или просто взять его с собой в отпуск для просмотра фильмов или игры в любимые видеоигры.', 15999, 'China', 'Notebook');
+(2, '14.1 Нетбук Prestigio Smartbook 141S синий', 'img/imgForElements/2.jpg', 'Благодаря компактным размерам и небольшому весу всего в 1.4 кг Smartbook 141S станет незаменимым помощником, если вам необходимо поехать на деловую встречу, поработать в кафе или просто взять его с собой в отпуск для просмотра фильмов или игры в любимые видеоигры.', 15999, 'China', 'Notebook'),
+(3, '13.3 Ноутбук Acer Aspire R 13 R7-372T-520Q черный', 'img/imgForElements/3.jpg', 'Ноутбук Acer Aspire R 13 R7-372T-520Q отличает уникальная конструкция-трансформер.', 79999, 'China', 'Notebook');
 
 -- --------------------------------------------------------
 
@@ -145,7 +146,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `Product`
 --
 ALTER TABLE `Product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `Types`
