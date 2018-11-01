@@ -1,7 +1,8 @@
 <?
-  require "db/connection.php";
+  require "db/connection.php"; // Подключение сессии и функционала
 ?>
 
+<!--Форма авторизации-->
 <div>
   <form method="POST">
     <input name='login' type="text" placeholder="username" />
@@ -14,25 +15,24 @@
 $arrayOfData[0] = getFromAttribute($arrayOfData[0], 'login', 'users');
 $arrayOfData[1] = getFromAttribute($arrayOfData[1], 'password', 'users');
 $data = $_POST;
-if(isset($data['signIn']))
+if(isset($data['signIn'])) // При нажатии по кнопке Авторизация
 {
   $checkLogin;
-  for($i = 0; $i < count($arrayOfData[0]); $i++)
+  for($i = 0; $i < count($arrayOfData[0]); $i++) //Данный цикл проверяет существуют ли такой логин
   {
     if($arrayOfData[0][$i] == $data['login'] && $arrayOfData[1][$i] == $data['password'])
     {
-      $checkLogin = 1;
+      $checkLogin = 1; // Данная переменная отвечает за то что цикл нашел успешно данные
       $dataBoutUser[] = $arrayOfData[0][$i];
       $dataBoutUser[] = $arrayOfData[1][$i];
-      print_r($dataBoutUser);
       break;
     }
     else
     {
-      $checkLogin = 0;
+      $checkLogin = 0; // В данной ситуации ищет, либо вообще не нашел
     }
   }
-  if($checkLogin)
+  if($checkLogin) // Если нашел такие данные, то авторизация прошла успешно
   {
     $_SESSION['logged_user'] = $dataBoutUser;
     echo 'Win<script>document.location.href="index.php"</script>';
