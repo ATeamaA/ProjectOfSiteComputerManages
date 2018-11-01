@@ -37,7 +37,7 @@
     {
       $errors[] = "Set your password";
     }
-    if(trim($data['password']) == trim($data['passwordRe']))
+    if(trim($data['password']) != trim($data['passwordRe']))
     {
       $errors[] = "These passwords are not similar";
     }
