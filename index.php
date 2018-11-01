@@ -53,7 +53,8 @@
 				for($i = 0; $i < count($arrayOfData[0]); $i++)
 				{
 					echo '<div class="window_one">
-									<img src="'.$arrayOfData[1][$i].'" alt="'.$arrayOfData[0][$i].'" height="250px" width="190px">
+									<img src="'.$arrayOfData[1][$i].'" alt="'.$arrayOfData[0][$i].'" height="190px" width="190px">
+									<a class="price_product">цена XXX Р</a>
 								</div>';
 				}
 				$mysqli->close();
@@ -65,19 +66,19 @@
 	</article>
 	<footer>
 		<div class="info">
-			<div class="info_one">
+			<div class="info_small">
 				<h4>Новость</h4>
 				<p>Описание новости</p>
 			</div>
-			<div class="info_two">
+			<div class="info_small">
 				<h4>Новость</h4>
 				<p>Описание новости</p>
 			</div>
-			<div class="info_three">
+			<div class="info_small">
 				<h4>Новость</h4>
 				<p>Описание новости</p>
 			</div>
-			<div class="info_four">
+			<div class="info_small">
 				<h4>Новость</h4>
 				<p>Описание новости</p>
 			</div>
