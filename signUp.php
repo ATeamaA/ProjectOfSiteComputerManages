@@ -12,8 +12,8 @@
 </div>
 <?
   $data = $_POST;
-  $arrayOfData[0] = getFromAttribute($arrayOfData[0], 'login');
-  $arrayOfData[1] = getFromAttribute($arrayOfData[1], 'password');
+  $arrayOfData[0] = getFromAttribute($arrayOfData[0], 'login', 'users');
+  $arrayOfData[1] = getFromAttribute($arrayOfData[1], 'password', 'users');
   if(isset($data['signUp']))
   {
     $errors = array();
