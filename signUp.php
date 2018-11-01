@@ -2,7 +2,6 @@
   require "db/connection.php"; // Подключение сессии и функционала
 ?>
 
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -22,8 +21,7 @@
   </div>
 </body>
 </html>
-=======
-<!--Форма регистрации-->
+  <!--Форма регистрации
 <div>
   <form method="POST">
     <input name='login' type="text" placeholder="username" />
@@ -33,7 +31,8 @@
     <input name="signUp" type="submit" value="Check">
   </form>
 </div>
->>>>>>> b0af48dac3f269a947e300922768817db63820a4
+  -->
+<!-- Эта собака вылазила и портила внешний вид, поэтому живёт в комментах >>>>>>> b0af48dac3f269a947e300922768817db63820a4-->
 
 <?
   $data = $_POST;
