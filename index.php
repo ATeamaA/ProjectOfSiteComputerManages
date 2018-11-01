@@ -25,7 +25,7 @@
 				<a href="*">Контакты</a>
 			</div>
 			<div class="right_nav">
-				<a href="*"><img src="img/logo/icons8-корзина-30.png" alt="Корзина"><p>Корзина</p></a>
+				<a href="index1.php"><img src="img/logo/icons8-корзина-30.png" alt="Корзина"><p>Корзина</p></a>
 				<a href="signIn.php"><img src="img/logo/icons8-мужчина-пользователь-26.png" alt="Войти"><p>Вход</p></a>
 				<a href="signUp.php"><img src="img/logo/icons8-добавить-пользователя-filled-50.png" alt="Регистрация"><p>Регистрация</p></a>
 				<a href="*"></a>
