@@ -2,13 +2,23 @@
   require "db/connection.php";
 ?>
 
-<div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="css/signUpIn.css">
+</head>
+<body>
+  <div class="field_sign_up_in">
   <form method="POST">
     <input name='login' type="text" placeholder="username" />
     <input name="password" type="password" placeholder="password"/>
     <input name="signIn" type="submit" value="Check">
   </form>
 </div>
+</body>
+</html>
 
 <?
 $arrayOfData[0] = getFromAttribute($arrayOfData[0], 'login', 'users');
