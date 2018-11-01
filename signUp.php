@@ -11,7 +11,6 @@
     </form>
   </div>
 </div>
-
 <?
   $data = $_POST;
   $arrayOfData[0] = getFromAttribute($arrayOfData[0], 'login');
