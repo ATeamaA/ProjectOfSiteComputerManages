@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+<?
+	require "db/connection.php";
+?>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
@@ -13,7 +16,7 @@
 		<div class="search">
 			<p>
 				<input class="search_string" type="text" name="search_query" placeholder="Поиск по сайту">
-				<input class="search_button" type="submit" value="Найти">	
+				<input class="search_button" type="submit" value="Найти">
 			</p>
 		</div>
 		<nav>
@@ -23,55 +26,37 @@
 			</div>
 			<div class="right_nav">
 				<a href="*"><img src="img/logo/icons8-корзина-30.png" alt="Корзина"><p>Корзина</p></a>
-				<a href="*"><img src="img/logo/icons8-мужчина-пользователь-26.png" alt="Войти"><p>Вход</p></a>
-				<a href="*"><img src="img/logo/icons8-добавить-пользователя-filled-50.png" alt="Регистрация"><p>Регистрация</p></a>
+				<a href="signIn.php"><img src="img/logo/icons8-мужчина-пользователь-26.png" alt="Войти"><p>Вход</p></a>
+				<a href="signUp.php"><img src="img/logo/icons8-добавить-пользователя-filled-50.png" alt="Регистрация"><p>Регистрация</p></a>
 				<a href="*"></a>
 				<a href="*"></a>
-				<a href="*"></a>	
+				<a href="*"></a>
 			</div>
 		</nav>
 	</header>
 	<article>
-		<div class="list">
-			<h4>Категории</h4>
-			<div class="list_push">
-				<a href="*">Настольные ПК</a><br>
-			</div>
-			<div class="list_push">
-				<a href="*">Ноутбуки</a><br>
-			</div>
-			<div class="list_push">
-				<a href="*">Ультрабуки</a><br>
-			</div>
-			<div class="list_push">
-				<a href="*">Нетбуки</a><br>
-			</div>
-			<div class="list_push">
-				<a href="*">Планшеты</a><br>
-			</div>
-			<div class="list_push">
-				<a href="*">КПК</a><br>
-			</div>
-		</div>
+		<?
+			$arrayOfData[0] = getFromAttribute($arrayOfData[0], 'type', 'Types');
+			$arrayOfData[1] = getFromAttribute($arrayOfData[1], 'img', 'Types');
+			echo '<div class="list">\
+							<h4>Категории</h4>';
+			foreach($arrayOfData[0] as $value)
+			{
+				echo '<div class="list_push">
+								<a href="*">'.$value.'</a><br>
+							</div>';
+			}
+			echo '</div>';
+		?>
 		<div class="content">
-			<div class="window_one">
-				<img src="img/" alt="Настольный Пк">
-			</div>
-			<div class="window_two">
-				<img src="img/" alt="Ноутбук">
-			</div>
-			<div class="window_three">
-				<img src="img/" alt="Ультрабук">
-			</div>
-			<div class="window_four">
-				<img src="img/" alt="Нетбук">
-			</div>
-			<div class="window_five">
-				<img src="img/" alt="Планшет">
-			</div>
-			<div class="window_six">
-				<img src="img/" alt="КПК">
-			</div>
+			<?
+				for($i = 0; $i < count($arrayOfData[0]); $i++)
+				{
+					echo '<div class="window_one">
+									<img src="'.$arrayOfData[1][$i].'" alt="'.$arrayOfData[0][$i].'" height="250px" width="190px">
+								</div>';
+				}
+			?>
 		</div>
 		<div class="banner">
 			<img src="img/logo/banner.jpg" alt="Спецпредложение">
