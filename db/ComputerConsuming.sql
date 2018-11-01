@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Ноя 01 2018 г., 07:54
+-- Время создания: Ноя 01 2018 г., 08:00
 -- Версия сервера: 5.7.20-log
 -- Версия PHP: 7.2.0
 
@@ -47,9 +47,9 @@ TRUNCATE TABLE `users`;
 -- Дамп данных таблицы `users`
 --
 
-INSERT DELAYED INTO `users` (`id`, `login`, `password`, `email`, `xCode`, `rights`) VALUES
-(1, 'ishkining', 'password', 'ishkining@mail.ru', 0, 'user'),
-(2, 'Andrey', 'admin', 'test@mail.ru', 0, 'user');
+INSERT INTO `users` (`id`, `login`, `password`, `email`, `xCode`, `rights`) VALUES
+(1, 'ishkining', 'password', 'ishkining@mail.ru', 0, 'admin'),
+(2, 'Andrey', 'admin', 'test@mail.ru', 0, 'admin');
 
 --
 -- Индексы сохранённых таблиц
