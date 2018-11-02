@@ -12,10 +12,34 @@
   <input name="addElement" type="submit" value="addElement" />
 </form>
 <hr>
+<form method="POST">
+  <input name="topic" type="text" placeholder="topic" />
+  <input name="message" type="text" placeholder="message" />
+  <input name="addElement" type="submit" value="addMessage" />
+</form>
+<hr>
 
 <?
   /*
     В данном участке кода проверяется событие добавление данных путем заполнения и нажатия по кнопке
+  */
+  $data = $_POST;
+  if(isset($data['addElement']) and
+      trim($data['title']) != "" and
+      trim($data['image']) != "" and
+      trim($data['description']) != "" and
+      trim($data['price']) != "" and
+      trim($data['producer']) != "")
+  {
+    $mysqli->query("INSERT INTO `Product` (`title`, `image`, `description`, `price`, `producer`, `type`)
+    VALUES ('".$data['title']."', 'img/imgForElements/".$data['image']."', '".$data['description']."',
+            '".$data['price']."', '".$data['producer']."', 'Notebook')");
+  }
+?>
+
+<?
+  /*
+    В данном участке кода проверяется событие отправка сообщения путем заполнения и нажатия по кнопке
   */
   $data = $_POST;
   if(isset($data['addElement']) and
