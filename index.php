@@ -26,8 +26,24 @@
 			</div>
 			<div class="right_nav">
 				<a href="index1.php"><img src="img/logo/icons8-корзина-30.png" alt="Корзина"><p>Корзина</p></a>
-				<a href="signIn.php"><img src="img/logo/icons8-мужчина-пользователь-26.png" alt="Войти"><p>Вход</p></a>
-				<a href="signUp.php"><img src="img/logo/icons8-добавить-пользователя-filled-50.png" alt="Регистрация"><p>Регистрация</p></a>
+				<?
+				if(isset($_SESSION['logged_user']))
+				{
+					echo '<a><img src="img/logo/icons8-мужчина-пользователь-26.png" alt="User"><p>'.$_SESSION['logged_user'][0].'</p></a>';
+				}
+				else
+				{
+					echo '<a href="signIn.php"><img src="img/logo/icons8-мужчина-пользователь-26.png" alt="Войти"><p>Вход</p></a>';
+				}
+				if(isset($_SESSION['logged_user']))
+				{
+					echo '<a href="logOut.php"><img src="img/logo/exit.png" alt="Exit"><p>Выход</p></a>';
+				}
+				else
+				{
+					echo '<a href="signUp.php"><img src="img/logo/icons8-добавить-пользователя-filled-50.png" alt="Регистрация"><p>Регистрация</p></a>';
+				}
+				?>
 				<a href="*"></a>
 				<a href="*"></a>
 				<a href="*"></a>
