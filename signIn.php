@@ -44,7 +44,7 @@ if(isset($data['signIn'])) // При нажатии по кнопке Автор
   if($checkLogin) // Если нашел такие данные, то авторизация прошла успешно
   {
     $_SESSION['logged_user'] = $dataBoutUser;
-    echo 'Win<script>document.location.href="index.php"</script>';
+    echo '<script>document.location.href="index.php"</script>';
   }
   else
   {
