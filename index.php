@@ -26,7 +26,12 @@
 			<div class="left_nav">
 				<a href="index.php">Главная</a>
 				<a href="conversation.php">Обратная связь</a>
-				<a class="admin" href="admin.php">Админка</a>
+				<?
+					if($_SESSION['logged_user'][2] == "admin")
+					{
+						echo '<a class="admin" href="admin.php">Админка</a>';
+					}
+				?>
 			</div>
 			<div class="right_nav">
 				<!-- <a href="admin.php">
