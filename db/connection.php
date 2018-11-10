@@ -25,7 +25,7 @@
   */
   function showProducts($title, $image, $description, $price, $producer)
   {
-    echo '<div style="float: left; background-color: green; width: 300px; height: 400px; margin: 10px;">
+    echo '<div style="float: left; background-color: green; width: 300px; height: 450px; margin: 10px;">
             <h2>'.$title.'</h2>
             <img src= "'.$image.'" width: "100px" height="100px">
             <p>'.$description.'</p>
@@ -44,9 +44,9 @@
 
   function showMessages($topic, $message, $login)
   {
-    echo '<div style="float: left; background-color: red; width: 300px; height: 400px; margin: 10px;">
+    echo '<div style="float: left; background-color: red; width: 300px; height: 250px; margin: 10px; ">
             <h2>'.$topic.'</h2>
-            <p>'.$message.'</p>
+            <p align="justify">'.$message.'</p>
             <p>Кто отправил - '.$login.'</p>
             <input type="submit" value="Натравить собак" />
           </div>';
