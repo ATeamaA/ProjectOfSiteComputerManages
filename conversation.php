@@ -14,13 +14,8 @@
 <!--Форма авторизации-->
   <form method="POST">
     <input name='title' type="text" placeholder="Заголовок" />
-<<<<<<< HEAD
     <input class="message" name="message" type="textarea" placeholder="Сообщение"/>
-    <input name="sendMessage" type="submit" value="Check">
-=======
-    <input name="message" type="textarea" placeholder="Сообщение"/>
     <input name="sendMessage" type="submit" value="Отправить">
->>>>>>> 853a3dc7e57e229544e5e2f47017cefb02152c61
   </form>
 </body>
 
