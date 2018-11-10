@@ -25,11 +25,11 @@
   */
   function showProducts($title, $image, $description, $price, $producer)
   {
-    echo '<div style="float: left; background-color: green; width: 300px; height: 400px; margin: 10px;">
-            <h2>'.$title.'</h2>
-            <img src= "'.$image.'" width: "100px" height="100px">
-            <p>'.$description.'</p>
-            <p>Price - '.$price.' ; Producer - '.$producer.'</p>
+    echo '<div style="float: left; background-color: green; width: 300px; height: 450px; margin: 10px;">
+            <h2 style="margin: 10px">'.$title.'</h2>
+            <img style="margin: 10px" src= "'.$image.'" width: "100px" height="100px">
+            <p align="justify" style="margin: 10px">'.$description.'</p>
+            <p align="justify" style="margin: 10px">Price - '.$price.' ; Producer - '.$producer.'</p>
           </div>';
   }
   /*
@@ -44,11 +44,11 @@
 
   function showMessages($topic, $message, $login)
   {
-    echo '<div style="float: left; background-color: red; width: 300px; height: 400px; margin: 10px;">
-            <h2>'.$topic.'</h2>
-            <p>'.$message.'</p>
-            <p>Кто отправил - '.$login.'</p>
-            <input type="submit" value="Натравить собак" />
+    echo '<div style="float: left; background-color: red; width: 300px; height: 250px; margin: 10px; ">
+            <h2 style="margin: 10px">'.$topic.'</h2>
+            <p align="justify" style="margin: 10px">'.$message.'</p>
+            <p style="margin: 10px">Кто отправил - '.$login.'</p>
+            <input style="margin: 10px" type="submit" value="Натравить собак" />
           </div>';
   }
 ?>

@@ -1,7 +1,17 @@
 <?
   require "db/connection.php"; // Подключение сессии и функционала
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin</title>
+  <link rel="stylesheet" href="css/adnim.css">
+</head>
+<body>
+  
+</body>
+</html>
 <!--Форма администратора, а в частности добавление элементов-->
 <form method="POST">
   <input name="title" type="text" placeholder="title" />
