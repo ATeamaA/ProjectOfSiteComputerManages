@@ -12,34 +12,20 @@
   <input name="addElement" type="submit" value="addElement" />
 </form>
 <hr>
-<form method="POST">
-  <input name="topic" type="text" placeholder="topic" />
-  <input name="message" type="text" placeholder="message" />
-  <input name="addElement" type="submit" value="addMessage" />
-</form>
-<hr>
 
 <?
-  /*
-    В данном участке кода проверяется событие добавление данных путем заполнения и нажатия по кнопке
-  */
-  $data = $_POST;
-  if(isset($data['addElement']) and
-      trim($data['title']) != "" and
-      trim($data['image']) != "" and
-      trim($data['description']) != "" and
-      trim($data['price']) != "" and
-      trim($data['producer']) != "")
+  $arrayOfDataM[0] = getFromAttribute($arrayOfDataM[0], 'topic', 'inbox');
+  $arrayOfDataM[1] = getFromAttribute($arrayOfDataM[1], 'message', 'inbox');
+  $arrayOfDataM[2] = getFromAttribute($arrayOfDataM[2], 'login', 'inbox');
+  for($i = 0; $i < count($arrayOfDataM[0]); $i++)
   {
-    $mysqli->query("INSERT INTO `Product` (`title`, `image`, `description`, `price`, `producer`, `type`)
-    VALUES ('".$data['title']."', 'img/imgForElements/".$data['image']."', '".$data['description']."',
-            '".$data['price']."', '".$data['producer']."', 'Notebook')");
+    showMessages($arrayOfDataM[0][$i], $arrayOfDataM[1][$i], $arrayOfDataM[2][$i]);
   }
 ?>
 
 <?
   /*
-    В данном участке кода проверяется событие отправка сообщения путем заполнения и нажатия по кнопке
+    В данном участке кода проверяется событие добавление данных путем заполнения и нажатия по кнопке
   */
   $data = $_POST;
   if(isset($data['addElement']) and
