@@ -32,7 +32,6 @@
     {
       $mysqli->query("INSERT INTO `inbox` (`topic`, `message`, `login`)
       VALUES ('".$_POST['title']."', '".$_POST['message']."', 'Stranger')");
-      print_r($_POST);
     }
     echo '<script>document.location.href="index.php"</script>';
   }
