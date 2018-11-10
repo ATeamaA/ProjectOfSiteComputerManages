@@ -17,6 +17,7 @@
     <input class="message" name="message" type="textarea" placeholder="Сообщение"/>
     <input name="sendMessage" type="submit" value="Отправить">
   </form>
+</div>
 </body>
 
 
