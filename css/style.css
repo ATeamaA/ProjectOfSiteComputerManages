@@ -11,6 +11,11 @@ a {
 	font-size: 24px;
 }
 
+.admin {
+	text-shadow: 0 0 15px green;
+	color: green;
+}
+
 h4 {
 	text-shadow: 0 0 15px #ff5050;
 	font-size: 24px;
