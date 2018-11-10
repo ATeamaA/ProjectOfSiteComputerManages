@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Ноя 10 2018 г., 09:15
+-- Время создания: Ноя 10 2018 г., 10:15
 -- Версия сервера: 5.7.20-log
 -- Версия PHP: 7.2.0
 
@@ -23,6 +23,32 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `ComputerConsuming` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `ComputerConsuming`;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `dataBoutStation`
+--
+
+DROP TABLE IF EXISTS `dataBoutStation`;
+CREATE TABLE `dataBoutStation` (
+  `id` int(11) NOT NULL,
+  `logo` varchar(50) NOT NULL,
+  `workDays` varchar(100) NOT NULL,
+  `phoneNumber` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Очистить таблицу перед добавлением данных `dataBoutStation`
+--
+
+TRUNCATE TABLE `dataBoutStation`;
+--
+-- Дамп данных таблицы `dataBoutStation`
+--
+
+INSERT INTO `dataBoutStation` (`id`, `logo`, `workDays`, `phoneNumber`) VALUES
+(1, 'img/logo/logo.png', 'Рабочие день: Пн с 13:00 до 15:00 Выходные дни: Вт, Ср, Чт, Пт, Сб, Вс', '7001000002');
 
 -- --------------------------------------------------------
 
@@ -149,6 +175,12 @@ INSERT INTO `users` (`id`, `login`, `password`, `email`, `xCode`, `rights`) VALU
 --
 
 --
+-- Индексы таблицы `dataBoutStation`
+--
+ALTER TABLE `dataBoutStation`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `inbox`
 --
 ALTER TABLE `inbox`
@@ -176,6 +208,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT для сохранённых таблиц
 --
+
+--
+-- AUTO_INCREMENT для таблицы `dataBoutStation`
+--
+ALTER TABLE `dataBoutStation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `inbox`
