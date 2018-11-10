@@ -12,6 +12,34 @@
   <input name="addElement" type="submit" value="addElement" />
 </form>
 <hr>
+<h2>Изменение параметров:</h2>
+<form method="POST">
+  <input name="logo" type="file" placeholder="logo" />
+  <input name="WorkingDays" type="text" placeholder="Рабочие дни:"/>
+  <input name="phoneNumber" type="text" placeholder="Номер телефона"/>
+  <input name="addData" type="submit" value="addElement" />
+</form>
+<hr>
+
+
+<?
+  $data = $_POST;
+  if(isset($data['addData']) and trim($data['logo']) != "" )
+  {
+    print_r("'img/logo/".$data['logo']."'");
+    $mysqli->query("UPDATE `dataBoutStation` SET `logo` = 'img/logo/".$data['logo']."' WHERE `dataBoutStation`.`id` = 1;");
+  }
+  if(isset($data['addData']) and trim($data['WorkingDays']) != "" )
+  {
+    $mysqli->query("UPDATE `dataBoutStation` SET `workDays` = '".$data['WorkingDays']."' WHERE `dataBoutStation`.`id` = 1;");
+  }
+  if(isset($data['addData']) and trim($data['phoneNumber']) != "" )
+  {
+    $mysqli->query("UPDATE `dataBoutStation` SET `phoneNumber` = '".$data['phoneNumber']."' WHERE `dataBoutStation`.`id` = 1;");
+  }
+?>
+
+
 
 <?
   $arrayOfDataM[0] = getFromAttribute($arrayOfDataM[0], 'topic', 'inbox');
