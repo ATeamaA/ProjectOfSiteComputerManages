@@ -41,4 +41,14 @@
             <img src="'.$image.'" alt="'.$title.'">
           </div>';
   }
+
+  function showMessages($topic, $message, $login)
+  {
+    echo '<div style="float: left; background-color: red; width: 300px; height: 400px; margin: 10px;">
+            <h2>'.$topic.'</h2>
+            <p>'.$message.'</p>
+            <p>Кто отправил - '.$login.'</p>
+            <input type="submit" value="Натравить собак" />
+          </div>';
+  }
 ?>
