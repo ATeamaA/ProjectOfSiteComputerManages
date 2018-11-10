@@ -34,7 +34,6 @@
       VALUES ('".$_POST['title']."', '".$_POST['message']."', 'Stranger')");
       print_r($_POST);
     }
-
-    //echo '<script>document.location.href="index.php"</script>';
+    echo '<script>document.location.href="index.php"</script>';
   }
 ?>
