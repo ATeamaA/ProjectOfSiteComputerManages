@@ -23,6 +23,7 @@
 <?
 $arrayOfData[0] = getFromAttribute($arrayOfData[0], 'login', 'users');
 $arrayOfData[1] = getFromAttribute($arrayOfData[1], 'password', 'users');
+$arrayOfData[2] = getFromAttribute($arrayOfData[2], 'rights', 'users');
 $data = $_POST;
 if(isset($data['signIn'])) // При нажатии по кнопке Авторизация
 {
@@ -34,6 +35,7 @@ if(isset($data['signIn'])) // При нажатии по кнопке Автор
       $checkLogin = 1; // Данная переменная отвечает за то что цикл нашел успешно данные
       $dataBoutUser[] = $arrayOfData[0][$i];
       $dataBoutUser[] = $arrayOfData[1][$i];
+      $dataBoutUser[] = $arrayOfData[2][$i];
       break;
     }
     else
