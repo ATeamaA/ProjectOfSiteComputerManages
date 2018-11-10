@@ -23,6 +23,7 @@
 			<div class="left_nav">
 				<a href="index.php">Главная</a>
 				<a href="conversation.php">Обратная связь</a>
+				<a class="admin" href="admin.php">Админка</a>
 			</div>
 			<div class="right_nav">
 				<a href="admin.php"><img src="img/logo/icons8-корзина-30.png" alt="Корзина"><p>Корзина</p></a>
