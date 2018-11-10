@@ -25,7 +25,7 @@
 				<a href="conversation.php">Обратная связь</a>
 			</div>
 			<div class="right_nav">
-				<a href="index1.php"><img src="img/logo/icons8-корзина-30.png" alt="Корзина"><p>Корзина</p></a>
+				<a href="admin.php"><img src="img/logo/icons8-корзина-30.png" alt="Корзина"><p>Корзина</p></a>
 				<?
 				if(isset($_SESSION['logged_user']))
 				{
