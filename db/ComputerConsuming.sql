@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Ноя 01 2018 г., 18:22
+-- Время создания: Ноя 10 2018 г., 09:15
 -- Версия сервера: 5.7.20-log
 -- Версия PHP: 7.2.0
 
@@ -23,6 +23,34 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `ComputerConsuming` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `ComputerConsuming`;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `inbox`
+--
+
+DROP TABLE IF EXISTS `inbox`;
+CREATE TABLE `inbox` (
+  `id` int(11) NOT NULL,
+  `topic` varchar(20) NOT NULL,
+  `message` varchar(100) NOT NULL,
+  `login` varchar(24) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Очистить таблицу перед добавлением данных `inbox`
+--
+
+TRUNCATE TABLE `inbox`;
+--
+-- Дамп данных таблицы `inbox`
+--
+
+INSERT INTO `inbox` (`id`, `topic`, `message`, `login`) VALUES
+(1, 'test', 'test', 'Stranger'),
+(2, 'test', 'test', 'Stranger'),
+(3, 'Сайт убогий', 'Удалите его пожалуйста!', 'ishkining');
 
 -- --------------------------------------------------------
 
@@ -113,11 +141,18 @@ TRUNCATE TABLE `users`;
 INSERT INTO `users` (`id`, `login`, `password`, `email`, `xCode`, `rights`) VALUES
 (1, 'ishkining', 'password', 'ishkining@mail.ru', 0, 'admin'),
 (2, 'Andrey', 'admin', 'test@mail.ru', 0, 'admin'),
-(5, 'Sergey', 'password', 'test@mail.ru', 0, 'user');
+(5, 'Sergey', 'password', 'test@mail.ru', 0, 'user'),
+(6, 'test', 'test', 'test@mail.ru', 0, 'user');
 
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `inbox`
+--
+ALTER TABLE `inbox`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `Product`
@@ -143,6 +178,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `inbox`
+--
+ALTER TABLE `inbox`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT для таблицы `Product`
 --
 ALTER TABLE `Product`
@@ -158,7 +199,7 @@ ALTER TABLE `Types`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
