@@ -15,11 +15,6 @@
   <form method="POST">
     <input name='title' type="text" placeholder="Заголовок" />
     <input class="message" name="message" type="textarea" placeholder="Сообщение"/>
-<<<<<<< HEAD
-    <input name="sendMessage" type="submit" value="Check">
-    <input name="message" type="textarea" placeholder="Сообщение"/>
-=======
->>>>>>> 465e0faf3aa54f23e524c148d0cff4832cc7138e
     <input name="sendMessage" type="submit" value="Отправить">
   </form>
 </body>
