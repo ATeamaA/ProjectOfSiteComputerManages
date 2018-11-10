@@ -14,3 +14,6 @@
 	border-radius: 10px 10px;
 	box-shadow: 0 0 15px #ff5050;
 }
+.field_sign_up_in .message {
+	height: 150px;
+}
