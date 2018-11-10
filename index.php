@@ -1,5 +1,8 @@
 <?
 	require "db/connection.php";
+	$dataOfWork[0] = getFromAttribute($dataOfWork[0], 'logo', 'dataBoutStation');
+	$dataOfWork[1] = getFromAttribute($dataOfWork[1], 'WorkDays', 'dataBoutStation');
+	$dataOfWork[2] = getFromAttribute($dataOfWork[2], 'phoneNumber', 'dataBoutStation');
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -11,7 +14,7 @@
 <body>
 	<header>
 		<div class="logo">
-			<a href="index.php"><img src="img/logo/logo.png" width="200px" alt="На главную"></a>
+			<a href="index.php"><? echo '<img src="'.$dataOfWork[0][0].'" width="200px" alt="На главную">'; ?></a>
 		</div>
 		<div class="search">
 			<p>
@@ -26,7 +29,10 @@
 				<a class="admin" href="admin.php">Админка</a>
 			</div>
 			<div class="right_nav">
-				<a href="admin.php"><img src="img/logo/icons8-корзина-30.png" alt="Корзина"><p>Корзина</p></a>
+				<!-- <a href="admin.php">
+						 <img src="'.$dataOfWork[0][0].'" alt="Корзина"><p>Корзина</p>
+				</a> -->
+
 				<?
 				if(isset($_SESSION['logged_user']))
 				{
@@ -102,8 +108,8 @@
 		</div>
 		<div class="creators">
 			<h5>2018 - Ишкинин Г.Г. & Тимохин А.М. 15П-2</h5>
-			<h6>Рабочие день: Пн с 13:00 до 15:00 Выходные дни: Вт, Ср, Чт, Пт, Сб, Вс</h6>
-			<h6>Телефон для связи: +7 (001) 000 00 01</h6>
+			<h6><? echo $dataOfWork[1][0]?></h6>
+			<h6>Телефон для связи: <? echo $dataOfWork[2][0]?></h6>
 		</div>
 	</footer>
 </body>
