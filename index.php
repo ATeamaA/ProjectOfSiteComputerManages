@@ -82,7 +82,7 @@
 				{
 					echo '<div class="window_one">
 									<img src="'.$arrayOfData[1][$i].'" alt="'.$arrayOfData[0][$i].'" height="190px" width="190px">
-									<a class="price_product">цена XXX Р</a>
+									<a href="product.php" class="price_product">цена XXX Р</a>
 								</div>';
 				}
 				$mysqli->close();
