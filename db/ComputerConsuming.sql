@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1:3307
--- Время создания: Ноя 10 2018 г., 10:15
--- Версия сервера: 5.7.20-log
--- Версия PHP: 7.2.0
+-- Хост: 127.0.0.1:3306
+-- Время создания: Ноя 29 2018 г., 21:51
+-- Версия сервера: 5.7.23
+-- Версия PHP: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,19 +19,18 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `ComputerConsuming`
+-- База данных: `computerconsuming`
 --
-CREATE DATABASE IF NOT EXISTS `ComputerConsuming` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `ComputerConsuming`;
+CREATE DATABASE IF NOT EXISTS `computerconsuming` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `computerconsuming`;
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `dataBoutStation`
+-- Структура таблицы `databoutstation`
 --
 
-DROP TABLE IF EXISTS `dataBoutStation`;
-CREATE TABLE `dataBoutStation` (
+CREATE TABLE `databoutstation` (
   `id` int(11) NOT NULL,
   `logo` varchar(50) NOT NULL,
   `workDays` varchar(100) NOT NULL,
@@ -39,15 +38,15 @@ CREATE TABLE `dataBoutStation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Очистить таблицу перед добавлением данных `dataBoutStation`
+-- Очистить таблицу перед добавлением данных `databoutstation`
 --
 
-TRUNCATE TABLE `dataBoutStation`;
+TRUNCATE TABLE `databoutstation`;
 --
--- Дамп данных таблицы `dataBoutStation`
+-- Дамп данных таблицы `databoutstation`
 --
 
-INSERT INTO `dataBoutStation` (`id`, `logo`, `workDays`, `phoneNumber`) VALUES
+INSERT INTO `databoutstation` (`id`, `logo`, `workDays`, `phoneNumber`) VALUES
 (1, 'img/logo/logo.png', 'Рабочие день: Пн с 13:00 до 15:00 Выходные дни: Вт, Ср, Чт, Пт, Сб, Вс', '7001000002');
 
 -- --------------------------------------------------------
@@ -56,7 +55,6 @@ INSERT INTO `dataBoutStation` (`id`, `logo`, `workDays`, `phoneNumber`) VALUES
 -- Структура таблицы `inbox`
 --
 
-DROP TABLE IF EXISTS `inbox`;
 CREATE TABLE `inbox` (
   `id` int(11) NOT NULL,
   `topic` varchar(20) NOT NULL,
@@ -81,11 +79,10 @@ INSERT INTO `inbox` (`id`, `topic`, `message`, `login`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Product`
+-- Структура таблицы `product`
 --
 
-DROP TABLE IF EXISTS `Product`;
-CREATE TABLE `Product` (
+CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `title` varchar(56) NOT NULL,
   `image` varchar(100) NOT NULL,
@@ -96,42 +93,41 @@ CREATE TABLE `Product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Очистить таблицу перед добавлением данных `Product`
+-- Очистить таблицу перед добавлением данных `product`
 --
 
-TRUNCATE TABLE `Product`;
+TRUNCATE TABLE `product`;
 --
--- Дамп данных таблицы `Product`
+-- Дамп данных таблицы `product`
 --
 
-INSERT INTO `Product` (`id`, `title`, `image`, `description`, `price`, `producer`, `type`) VALUES
-(1, '13.3 Ультрабук Acer Aspire S 13 S5-371-33RL черный', 'img/imgForElements/1.jpg', 'Прекрасный Ultrabook с диагональю 13,3 дюйма и компактным дизайном благодаря технологии порта MagicFlip', 62999, 'China', 'Notebook'),
-(2, '14.1 Нетбук Prestigio Smartbook 141S синий', 'img/imgForElements/2.jpg', 'Благодаря компактным размерам и небольшому весу всего в 1.4 кг Smartbook 141S станет незаменимым помощником, если вам необходимо поехать на деловую встречу, поработать в кафе или просто взять его с собой в отпуск для просмотра фильмов или игры в любимые видеоигры.', 15999, 'China', 'Notebook'),
-(3, '13.3 Ноутбук Acer Aspire R 13 R7-372T-520Q черный', 'img/imgForElements/3.jpg', 'Ноутбук Acer Aspire R 13 R7-372T-520Q отличает уникальная конструкция-трансформер.', 79999, 'China', 'Notebook');
+INSERT INTO `product` (`id`, `title`, `image`, `description`, `price`, `producer`, `type`) VALUES
+(1, '13.3 Ультрабук Acer Aspire S 13 S5-371-33RL черный', 'img/imgForElements/1.jpg', 'Прекрасный Ultrabook с диагональю 13,3 дюйма и компактным дизайном благодаря технологии порта MagicFlip', 62999, 'China', 'Ноутбуки'),
+(2, '14.1 Нетбук Prestigio Smartbook 141S синий', 'img/imgForElements/2.jpg', 'Благодаря компактным размерам и небольшому весу всего в 1.4 кг Smartbook 141S станет незаменимым помощником, если вам необходимо поехать на деловую встречу, поработать в кафе или просто взять его с собой в отпуск для просмотра фильмов или игры в любимые видеоигры.', 15999, 'China', 'Ноутбуки'),
+(3, '13.3 Ноутбук Acer Aspire R 13 R7-372T-520Q черный', 'img/imgForElements/3.jpg', 'Ноутбук Acer Aspire R 13 R7-372T-520Q отличает уникальная конструкция-трансформер.', 79999, 'China', 'Ноутбуки');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Types`
+-- Структура таблицы `types`
 --
 
-DROP TABLE IF EXISTS `Types`;
-CREATE TABLE `Types` (
+CREATE TABLE `types` (
   `id` int(11) NOT NULL,
   `type` varchar(20) NOT NULL,
   `img` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Очистить таблицу перед добавлением данных `Types`
+-- Очистить таблицу перед добавлением данных `types`
 --
 
-TRUNCATE TABLE `Types`;
+TRUNCATE TABLE `types`;
 --
--- Дамп данных таблицы `Types`
+-- Дамп данных таблицы `types`
 --
 
-INSERT INTO `Types` (`id`, `type`, `img`) VALUES
+INSERT INTO `types` (`id`, `type`, `img`) VALUES
 (1, 'Ноутбуки', 'img/imgForElements/Type_1.jpg'),
 (2, 'Ультрабуки', 'img/imgForElements/Type_2.jpg'),
 (3, 'КПК', 'img/imgForElements/Type_3.jpg'),
@@ -145,7 +141,6 @@ INSERT INTO `Types` (`id`, `type`, `img`) VALUES
 -- Структура таблицы `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `login` varchar(24) NOT NULL,
@@ -175,9 +170,9 @@ INSERT INTO `users` (`id`, `login`, `password`, `email`, `xCode`, `rights`) VALU
 --
 
 --
--- Индексы таблицы `dataBoutStation`
+-- Индексы таблицы `databoutstation`
 --
-ALTER TABLE `dataBoutStation`
+ALTER TABLE `databoutstation`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -187,15 +182,15 @@ ALTER TABLE `inbox`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `Product`
+-- Индексы таблицы `product`
 --
-ALTER TABLE `Product`
+ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `Types`
+-- Индексы таблицы `types`
 --
-ALTER TABLE `Types`
+ALTER TABLE `types`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -210,9 +205,9 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT для таблицы `dataBoutStation`
+-- AUTO_INCREMENT для таблицы `databoutstation`
 --
-ALTER TABLE `dataBoutStation`
+ALTER TABLE `databoutstation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -222,15 +217,15 @@ ALTER TABLE `inbox`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `Product`
+-- AUTO_INCREMENT для таблицы `product`
 --
-ALTER TABLE `Product`
+ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `Types`
+-- AUTO_INCREMENT для таблицы `types`
 --
-ALTER TABLE `Types`
+ALTER TABLE `types`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
