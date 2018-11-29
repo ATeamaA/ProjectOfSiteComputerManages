@@ -30,8 +30,8 @@
             <img style="margin: 10px" src= "'.$image.'" width: "100px" height="100px">
             <div class="window_categories_text">
               <p align="justify" style="margin: 10px">'.substr($description, 0, 101).'...</p>
-            </div>
-            <p align="justify" style="margin: 10px">Price - '.$price.' ; Producer - '.$producer.'</p>
+              <p align="justify" style="margin: 10px">Price - '.$price.' ; Producer - '.$producer.'</p>
+            </div>  
           </div>';
   }
   /*
