@@ -26,6 +26,7 @@
 			<div class="left_nav">
 				<a href="index.php">Главная</a>
 				<a href="conversation.php">Обратная связь</a>
+				<a href="favourites.php">Избранное</a>
 				<?
 					if($_SESSION['logged_user'][2] == "admin")
 					{
@@ -97,7 +98,7 @@
 				}
 				else if(isset($_GET['id']))
 				{
-					echo '<div class="window_categories">
+					echo '<div class="window_product">
 			            <h2 style="margin: 10px">'.$arrayOfProduct[0][$_GET['id']].'</h2>
 			            <div style="display: inline-block;vertical-align: top">
 			            	<img style="margin: 10px; display: block" src= "'.$arrayOfProduct[1][$_GET['id']].'" width: "100px" height="100px">
@@ -107,6 +108,9 @@
 			              	<p align="justify" style="margin: 10px">'.$arrayOfProduct[2][$_GET['id']].'</p>
 			            
 			            	<p align="justify" style="margin: 10px">Цена - '.$arrayOfProduct[3][$_GET['id']].' ; Производство - '.$arrayOfProduct[4][$_GET['id']].'</p>
+			            </div>
+			            <div class="like_btn">
+			            <a href="*">В избранное</a>
 			            </div>
 			          </div>';
 				}
