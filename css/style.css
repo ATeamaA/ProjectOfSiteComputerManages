@@ -109,7 +109,14 @@ article {
 	float: right;
 	margin: 30px 100px 0 0;
 }
-.content div {
+/*.content div {
+	height: 270px;
+	width: 200px;
+	display: inline-block;
+	margin: 30px auto;
+	background-color: #909090;
+}*/
+.window_one {
 	height: 270px;
 	width: 200px;
 	display: inline-block;
@@ -118,6 +125,15 @@ article {
 }
 .window_one img {
 	margin: 5px;
+}
+.window_categories {
+	width: 550px;
+	margin: 30px auto;
+	background-color: #909090;
+	padding: 10px;
+}
+.window_categories_text {
+	display: inline-block;
 }
 .price_product {
 	margin: 10px;
