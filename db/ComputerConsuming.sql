@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 29 2018 г., 21:51
+-- Время создания: Ноя 29 2018 г., 22:20
 -- Версия сервера: 5.7.23
 -- Версия PHP: 7.2.10
 
@@ -46,7 +46,7 @@ TRUNCATE TABLE `databoutstation`;
 -- Дамп данных таблицы `databoutstation`
 --
 
-INSERT INTO `databoutstation` (`id`, `logo`, `workDays`, `phoneNumber`) VALUES
+INSERT DELAYED INTO `databoutstation` (`id`, `logo`, `workDays`, `phoneNumber`) VALUES
 (1, 'img/logo/logo.png', 'Рабочие день: Пн с 13:00 до 15:00 Выходные дни: Вт, Ср, Чт, Пт, Сб, Вс', '7001000002');
 
 -- --------------------------------------------------------
@@ -71,7 +71,7 @@ TRUNCATE TABLE `inbox`;
 -- Дамп данных таблицы `inbox`
 --
 
-INSERT INTO `inbox` (`id`, `topic`, `message`, `login`) VALUES
+INSERT DELAYED INTO `inbox` (`id`, `topic`, `message`, `login`) VALUES
 (1, 'test', 'test', 'Stranger'),
 (2, 'test', 'test', 'Stranger'),
 (3, 'Сайт убогий', 'Удалите его пожалуйста!', 'ishkining');
@@ -86,7 +86,7 @@ CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `title` varchar(56) NOT NULL,
   `image` varchar(100) NOT NULL,
-  `description` varchar(500) NOT NULL,
+  `description` text NOT NULL,
   `price` int(11) NOT NULL,
   `producer` varchar(50) NOT NULL,
   `type` varchar(50) NOT NULL
@@ -101,10 +101,11 @@ TRUNCATE TABLE `product`;
 -- Дамп данных таблицы `product`
 --
 
-INSERT INTO `product` (`id`, `title`, `image`, `description`, `price`, `producer`, `type`) VALUES
+INSERT DELAYED INTO `product` (`id`, `title`, `image`, `description`, `price`, `producer`, `type`) VALUES
 (1, '13.3 Ультрабук Acer Aspire S 13 S5-371-33RL черный', 'img/imgForElements/1.jpg', 'Прекрасный Ultrabook с диагональю 13,3 дюйма и компактным дизайном благодаря технологии порта MagicFlip', 62999, 'China', 'Ноутбуки'),
 (2, '14.1 Нетбук Prestigio Smartbook 141S синий', 'img/imgForElements/2.jpg', 'Благодаря компактным размерам и небольшому весу всего в 1.4 кг Smartbook 141S станет незаменимым помощником, если вам необходимо поехать на деловую встречу, поработать в кафе или просто взять его с собой в отпуск для просмотра фильмов или игры в любимые видеоигры.', 15999, 'China', 'Ноутбуки'),
-(3, '13.3 Ноутбук Acer Aspire R 13 R7-372T-520Q черный', 'img/imgForElements/3.jpg', 'Ноутбук Acer Aspire R 13 R7-372T-520Q отличает уникальная конструкция-трансформер.', 79999, 'China', 'Ноутбуки');
+(3, '13.3 Ноутбук Acer Aspire R 13 R7-372T-520Q черный', 'img/imgForElements/3.jpg', 'Ноутбук Acer Aspire R 13 R7-372T-520Q отличает уникальная конструкция-трансформер.', 79999, 'China', 'Ноутбуки'),
+(4, '14.1 Ноутбук Prestigio Smartbook 141 C2 синий', 'img/imgForElements/4.jpg', 'Ноутбук Prestigio Smartbook 141 C2 подойдет тем, кто планирует использовать его для выполнения стандартных офисных и домашних задач, а также простых игр. Благодаря своему относительно небольшому размеру и малому весу он чрезвычайно удобен в транспортировке – его нетрудно брать с собой всегда и везде. Отличное качество изображения на 14.1-дюймовом экране достигается благодаря его Full-HD-разрешению. Высокой скорости загрузки и быстрым переходам от одного приложения к другому способствует использование для установки системы SSD-диска. Объем его минимален, всего 32 ГБ, для хранения данных подразумевается привлечение облачных сервисов или внешних носителей. Выход в Интернет возможен как через кабель, так и без него (есть Wi-Fi-модуль и Ethernet-порт). Беспроводные устройства получится подключить благодаря наличию Bluetooth версии 4.0. Производителем установлена ОС Windows 10, что избавляет он необходимости трат на ее приобретение.', 13999, 'Syberia', 'Ноутбуки');
 
 -- --------------------------------------------------------
 
@@ -127,7 +128,7 @@ TRUNCATE TABLE `types`;
 -- Дамп данных таблицы `types`
 --
 
-INSERT INTO `types` (`id`, `type`, `img`) VALUES
+INSERT DELAYED INTO `types` (`id`, `type`, `img`) VALUES
 (1, 'Ноутбуки', 'img/imgForElements/Type_1.jpg'),
 (2, 'Ультрабуки', 'img/imgForElements/Type_2.jpg'),
 (3, 'КПК', 'img/imgForElements/Type_3.jpg'),
@@ -159,7 +160,7 @@ TRUNCATE TABLE `users`;
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `login`, `password`, `email`, `xCode`, `rights`) VALUES
+INSERT DELAYED INTO `users` (`id`, `login`, `password`, `email`, `xCode`, `rights`) VALUES
 (1, 'ishkining', 'password', 'ishkining@mail.ru', 0, 'admin'),
 (2, 'Andrey', 'admin', 'test@mail.ru', 0, 'admin'),
 (5, 'Sergey', 'password', 'test@mail.ru', 0, 'user'),
@@ -220,7 +221,7 @@ ALTER TABLE `inbox`
 -- AUTO_INCREMENT для таблицы `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `types`
