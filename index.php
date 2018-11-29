@@ -78,21 +78,33 @@
 		?>
 		<div class="content">
 			<?
+				$arrayOfProduct[0] = getFromAttribute($arrayOfProduct[0], 'title', 'Product');
+				$arrayOfProduct[1] = getFromAttribute($arrayOfProduct[1], 'image', 'Product');
+				$arrayOfProduct[2] = getFromAttribute($arrayOfProduct[2], 'description', 'Product');
+				$arrayOfProduct[3] = getFromAttribute($arrayOfProduct[3], 'price', 'Product');
+				$arrayOfProduct[4] = getFromAttribute($arrayOfProduct[4], 'producer', 'Product');
+				$arrayOfProduct[5] = getFromAttribute($arrayOfProduct[5], 'type', 'Product');
+				$arrayOfProduct[6] = getFromAttribute($arrayOfProduct[6], 'id', 'Product');
 				if(isset($_GET['type']))
 				{
-					$arrayOfProduct[0] = getFromAttribute($arrayOfProduct[0], 'title', 'Product');
-					$arrayOfProduct[1] = getFromAttribute($arrayOfProduct[1], 'image', 'Product');
-					$arrayOfProduct[2] = getFromAttribute($arrayOfProduct[2], 'description', 'Product');
-					$arrayOfProduct[3] = getFromAttribute($arrayOfProduct[3], 'price', 'Product');
-					$arrayOfProduct[4] = getFromAttribute($arrayOfProduct[4], 'producer', 'Product');
-					$arrayOfProduct[5] = getFromAttribute($arrayOfProduct[5], 'type', 'Product');
 					for($i = 0; $i < count($arrayOfProduct[0]); $i++)
 					{
 						if($_GET['type'] == $arrayOfProduct[5][$i])
 						{
-							showProducts($arrayOfProduct[0][$i], $arrayOfProduct[1][$i], $arrayOfProduct[2][$i], $arrayOfProduct[3][$i], $arrayOfProduct[4][$i]);
+							showProducts($arrayOfProduct[0][$i], $arrayOfProduct[1][$i], $arrayOfProduct[2][$i], $arrayOfProduct[3][$i], $arrayOfProduct[4][$i],  $arrayOfProduct[6][$i]);
 						}
 					}
+				}
+				else if(isset($_GET['id']))
+				{
+					echo '<div class="window_categories">
+			            <h2 style="margin: 10px">'.$arrayOfProduct[0][$_GET['id']].'</h2>
+			            <img style="margin: 10px" src= "'.$arrayOfProduct[1][$_GET['id']].'" width: "100px" height="100px">
+			            <div class="window_categories_text">
+			              <p align="justify" style="margin: 10px">'.$arrayOfProduct[2][$_GET['id']].'</p>
+			            </div>
+			            <p align="justify" style="margin: 10px">Price - '.$arrayOfProduct[3][$_GET['id']].' ; Producer - '.$arrayOfProduct[4][$_GET['id']].'</p>
+			          </div>';
 				}
 				else
 				{
