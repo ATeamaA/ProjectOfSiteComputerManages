@@ -99,11 +99,15 @@
 				{
 					echo '<div class="window_categories">
 			            <h2 style="margin: 10px">'.$arrayOfProduct[0][$_GET['id']].'</h2>
-			            <img style="margin: 10px; vertical-align: top" src= "'.$arrayOfProduct[1][$_GET['id']].'" width: "100px" height="100px">
-			            <div class="window_categories_text">
-			              <p align="justify" style="margin: 10px">'.$arrayOfProduct[2][$_GET['id']].'</p>
+			            <div style="display: inline-block;vertical-align: top">
+			            	<img style="margin: 10px; display: block" src= "'.$arrayOfProduct[1][$_GET['id']].'" width: "100px" height="100px">
+			            	<img style="margin: 10px; display: block" src= "'.$arrayOfProduct[1][$_GET['id']].'" width: "100px" height="100px">
 			            </div>
-			            <p align="justify" style="margin: 10px">Price - '.$arrayOfProduct[3][$_GET['id']].' ; Producer - '.$arrayOfProduct[4][$_GET['id']].'</p>
+			            <div class="window_categories_text">
+			              	<p align="justify" style="margin: 10px">'.$arrayOfProduct[2][$_GET['id']].'</p>
+			            
+			            	<p align="justify" style="margin: 10px">Цена - '.$arrayOfProduct[3][$_GET['id']].' ; Производство - '.$arrayOfProduct[4][$_GET['id']].'</p>
+			            </div>
 			          </div>';
 				}
 				else
