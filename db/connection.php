@@ -28,7 +28,7 @@
     echo '<div style="float: left; background-color: green; width: 300px; height: 450px; margin: 10px;">
             <h2 style="margin: 10px">'.$title.'</h2>
             <img style="margin: 10px" src= "'.$image.'" width: "100px" height="100px">
-            <p align="justify" style="margin: 10px">'.$description.'</p>
+            <p align="justify" style="margin: 10px">'.substr($description, 0, 101).'...</p>
             <p align="justify" style="margin: 10px">Price - '.$price.' ; Producer - '.$producer.'</p>
           </div>';
   }
