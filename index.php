@@ -163,3 +163,22 @@
 	</footer>
 </body>
 </html>
+
+<!--Вместо того что выше, если я всё правильно понял
+	<div class="content">
+		<div class="window_categories">
+            <h2 style="margin: 10px"><a href="index.php?id='.$id.'">'.$title.'</a></h2>
+            <img style="margin: 10px" src= "'.$image.'" width: "100px" height="100px">
+            <div class="window_categories_text">
+              	<p align="justify" style="margin: 10px">'.substr($description, 0, 101).'...</p>
+              	<p align="justify" style="margin: 10px">Цена - '.$price.' ; Производство - '.$producer.'</p>
+            </div>
+			<form class="dislike_btn">
+		 		<button><img src="img/logo/dislike.png"></button>
+			</form>  
+	    </div>
+	</div>
+-->
+
+
+
