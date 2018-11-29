@@ -23,10 +23,10 @@
   /*
     Данная функция показывает все товары в фиксированных блоках
   */
-  function showProducts($title, $image, $description, $price, $producer)
+  function showProducts($title, $image, $description, $price, $producer, $id)
   {
     echo '<div class="window_categories">
-            <h2 style="margin: 10px">'.$title.'</h2>
+            <h2 style="margin: 10px"><a href="index.php?id='.$id.'">'.$title.'</a></h2>
             <img style="margin: 10px" src= "'.$image.'" width: "100px" height="100px">
             <div class="window_categories_text">
               <p align="justify" style="margin: 10px">'.substr($description, 0, 101).'...</p>
