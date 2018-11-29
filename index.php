@@ -71,19 +71,38 @@
 			foreach($arrayOfData[0] as $value)
 			{
 				echo '<div class="list_push">
-								<a href="*">'.$value.'</a><br>
+								<a href="index.php?type='.$value.'">'.$value.'</a><br>
 							</div>';
 			}
 			echo '</div>';
 		?>
 		<div class="content">
 			<?
-				for($i = 0; $i < count($arrayOfData[0]); $i++)
+				if(isset($_GET['type']))
 				{
-					echo '<div class="window_one">
-									<img src="'.$arrayOfData[1][$i].'" alt="'.$arrayOfData[0][$i].'" height="190px" width="190px">
-									<a href="product.php" class="price_product">цена XXX Р</a>
-								</div>';
+					$arrayOfProduct[0] = getFromAttribute($arrayOfProduct[0], 'title', 'Product');
+					$arrayOfProduct[1] = getFromAttribute($arrayOfProduct[1], 'image', 'Product');
+					$arrayOfProduct[2] = getFromAttribute($arrayOfProduct[2], 'description', 'Product');
+					$arrayOfProduct[3] = getFromAttribute($arrayOfProduct[3], 'price', 'Product');
+					$arrayOfProduct[4] = getFromAttribute($arrayOfProduct[4], 'producer', 'Product');
+					$arrayOfProduct[5] = getFromAttribute($arrayOfProduct[5], 'type', 'Product');
+					for($i = 0; $i < count($arrayOfProduct[0]); $i++)
+					{
+						if($_GET['type'] == $arrayOfProduct[5][$i])
+						{
+							showProducts($arrayOfProduct[0][$i], $arrayOfProduct[1][$i], $arrayOfProduct[2][$i], $arrayOfProduct[3][$i], $arrayOfProduct[4][$i]);
+						}
+					}
+				}
+				else
+				{
+					for($i = 0; $i < count($arrayOfData[0]); $i++)
+					{
+						echo '<div class="window_one">
+										<img src="'.$arrayOfData[1][$i].'" alt="'.$arrayOfData[0][$i].'" height="190px" width="190px">
+										<a href="index.php?type='.$arrayOfData[0][$i].'" class="price_product">цена XXX Р</a>
+									</div>';
+					}
 				}
 				$mysqli->close();
 			?>
