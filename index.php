@@ -110,7 +110,7 @@
 			            	<p align="justify" style="margin: 10px">Цена - '.$arrayOfProduct[3][$_GET['id']].' ; Производство - '.$arrayOfProduct[4][$_GET['id']].'</p>
 			            </div>
 			            <div class="like_btn">
-			            <a href="*">В избранное</a>
+			            <a href="*">В избранное <img width="30px" src="img/logo/like.png"></a>
 			            </div>
 			          </div>';
 				}
