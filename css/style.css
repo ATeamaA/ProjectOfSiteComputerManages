@@ -161,7 +161,10 @@ article {
 	text-shadow: 0 0 15px #ff5050;
 }
 .like_btn {
-	margin: 15px;
+	margin: 15px;	
+}
+.like_btn img {
+	vertical-align: text-bottom;	
 }
 .price_product {
 	margin: 10px;
