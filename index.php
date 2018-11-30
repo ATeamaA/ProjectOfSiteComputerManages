@@ -26,7 +26,7 @@
 			<div class="left_nav">
 				<a href="index.php">Главная</a>
 				<a href="conversation.php">Обратная связь</a>
-				<a href="favourites.php">Избранное</a>
+				<a href="index.php?favorite=work">Избранное</a>
 				<?
 					if($_SESSION['logged_user'][2] == "admin")
 					{
@@ -86,6 +86,9 @@
 				$arrayOfProduct[4] = getFromAttribute($arrayOfProduct[4], 'producer', 'Product');
 				$arrayOfProduct[5] = getFromAttribute($arrayOfProduct[5], 'type', 'Product');
 				$arrayOfProduct[6] = getFromAttribute($arrayOfProduct[6], 'id', 'Product');
+
+				$arrayOfFavorites[0] = getFromAttribute($arrayOfFavorites[0], 'login', 'favorites');
+				$arrayOfFavorites[1] = getFromAttribute($arrayOfFavorites[1], 'idProduct', 'favorites');
 				if(isset($_GET['type']))
 				{
 					for($i = 0; $i < count($arrayOfProduct[0]); $i++)
@@ -99,25 +102,37 @@
 				else if(isset($_GET['id']))
 				{
 					echo '<div class="window_product">
-			            <h2 style="margin: 10px">'.$arrayOfProduct[0][$_GET['id']].'</h2>
+			            <h2 style="margin: 10px">'.$arrayOfProduct[0][$_GET['id'] - 1].'</h2>
 			            <div style="display: inline-block;vertical-align: top">
-			            	<img style="margin: 10px; display: block" src= "'.$arrayOfProduct[1][$_GET['id']].'" width: "100px" height="100px">
-			            	<img style="margin: 10px; display: block" src= "'.$arrayOfProduct[1][$_GET['id']].'" width: "100px" height="100px">
+			            	<img style="margin: 10px; display: block" src= "'.$arrayOfProduct[1][$_GET['id'] - 1].'" width: "100px" height="100px">
+			            	<img style="margin: 10px; display: block" src= "'.$arrayOfProduct[1][$_GET['id'] - 1].'" width: "100px" height="100px">
 			            </div>
 			            <div class="window_categories_text">
-			              	<p align="justify" style="margin: 10px">'.$arrayOfProduct[2][$_GET['id']].'</p>
-			            
-			            	<p align="justify" style="margin: 10px">Цена - '.$arrayOfProduct[3][$_GET['id']].' ; Производство - '.$arrayOfProduct[4][$_GET['id']].'</p>
+			              	<p align="justify" style="margin: 10px">'.$arrayOfProduct[2][$_GET['id'] - 1].'</p>
+
+			            	<p align="justify" style="margin: 10px">Цена - '.$arrayOfProduct[3][$_GET['id'] - 1].' ; Производство - '.$arrayOfProduct[4][$_GET['id'] - 1].'</p>
 			            </div>
 			            <!--
 			            	<div class="like_btn">
 			            		<a href="*">В избранное <img width="30px" src="img/logo/like.png"></a>
 			           		</div>
 			           	-->
-			            <form class="like_btn">
-						  <button><img src="img/logo/like.png"></button>
-						</form>
+			            <form class="like_btn" method="POST">
+									  <button type="submit" name="'.$_GET['id'].'"><img src="img/logo/like.png"></button>
+									</form>
 			          </div>';
+				}
+				else if(isset($_GET['favorite']))
+				{
+					for($i = 0; $i < count($arrayOfFavorites[0]); $i++)
+					{
+						if($_SESSION['logged_user'][0] == $arrayOfFavorites[0][$i])
+						{
+							showFavorite($arrayOfProduct[0][$arrayOfFavorites[1][$i] - 1], $arrayOfProduct[1][$arrayOfFavorites[1][$i]  - 1], $arrayOfProduct[2][$arrayOfFavorites[1][$i]  - 1], $arrayOfProduct[3][$arrayOfFavorites[1][$i]  - 1],
+							$arrayOfProduct[4][$arrayOfFavorites[1][$i]  - 1],
+							$arrayOfProduct[6][$arrayOfFavorites[1][$i]  - 1]);
+						}
+					}
 				}
 				else
 				{
@@ -127,6 +142,19 @@
 										<img src="'.$arrayOfData[1][$i].'" alt="'.$arrayOfData[0][$i].'" height="190px" width="190px">
 										<a href="index.php?type='.$arrayOfData[0][$i].'" class="price_product">цена XXX Р</a>
 									</div>';
+					}
+				}
+
+				$dataOfPost = $_POST;
+				for($i = 0; $i < count($arrayOfProduct[0]); $i++)
+				{
+					if(isset($dataOfPost[$arrayOfProduct[6][$i]]) && isset($_SESSION['logged_user']) && isset($_GET['id']))
+					{
+						addFavorite($_SESSION['logged_user'][0], $arrayOfProduct[6][$i]);
+					}
+					else if(isset($dataOfPost[$arrayOfProduct[6][$i]]) && isset($_SESSION['logged_user']) && isset($_GET['favorite']))
+					{
+						deleteFavorite($arrayOfProduct[6][$i]);
 					}
 				}
 				$mysqli->close();
@@ -164,6 +192,8 @@
 </body>
 </html>
 
+
+
 <!--Вместо того что выше, если я всё правильно понял
 	<div class="content">
 		<div class="window_categories">
@@ -175,10 +205,7 @@
             </div>
 			<form class="dislike_btn">
 		 		<button><img src="img/logo/dislike.png"></button>
-			</form>  
+			</form>
 	    </div>
 	</div>
 -->
-
-
-
