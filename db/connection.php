@@ -23,7 +23,7 @@
   /*
     Данная функция показывает все товары в фиксированных блоках
   */
-  function showProducts($title, $image, $description, $price, $producer, $id)
+  function showProducts($page, $id, $title, $image, $description, $price, $producer)
   {
     echo '<div class="window_categories">
             <h2 style="margin: 10px"><a href="index.php?id='.$id.'">'.$title.'</a></h2>
@@ -80,5 +80,95 @@
     global $mysqli;
     $mysqli->query("DELETE FROM `favorites` WHERE `login` = '".$_SESSION['logged_user'][0]."' and `idProduct` = $id");
     echo '<script>document.location.href="index.php?favorite=work"</script>';
+  }
+
+  function defaultPage($type, $id, $title)
+  {
+    echo '<div style="background: blue; width: 45px; height: 25px; float: left;">
+            <center><a href="index.php?type='.$type.'&page='.$id.'">'.$title.'</a></center>
+          </div>';
+  }
+
+  function activePage($type, $id, $title)
+  {
+    echo '<div style="background: red; width: 45px; height: 25px; float: left;">
+            <center><a href="index.php?type='.$type.'&page='.$id.'">'.$title.'</a></center>
+          </div>';
+  }
+
+  function showPages($id, $length, $type)
+  {
+    echo '<div class="pages">';
+    $length *= 34;
+    if($id <= 2)
+    {
+      for($i = 1; $i <= 3; $i++)
+      {
+        if($id == $i)
+        {
+          activePage($type, $id, $id);
+        }
+        else
+        {
+          defaultPage($type, $i, $i);
+        }
+      }
+      for($i = 10; $i <= $length; $i*=10)
+      {
+        defaultPage($type, $id, '...');
+        defaultPage($type, $i, $i);
+      }
+    }
+    else if($id >= $length - 2)
+    {
+      defaultPage($type, '1', '1');
+      for($i = 10; $i <= $length / 10; $i*=10)
+      {
+        defaultPage($type, $id, '...');
+        defaultPage($type, $i, $i);
+      }
+      for($i = $length - 2; $i <= $length; $i++)
+      {
+        if($id == $i)
+        {
+          activePage($type, $id, $id);
+        }
+        else
+        {
+          defaultPage($type, $i, $i);
+        }
+      }
+    }
+    else
+    {
+      $endPoint = true;
+      defaultPage($type, '1', '1');
+      for($i = 10; $i < $length; $i*=10)
+      {
+        if($i > $id && $endPoint)
+        {
+          defaultPage($type, $id, '...');
+          for($j = $id - 1; $j <= $id + 1; $j++)
+          {
+            if($id == $j)
+            {
+              activePage($type, $id, $id);
+            }
+            else
+            {
+              defaultPage($type, $j, $j);
+            }
+          }
+          $endPoint = false;
+
+        }
+        if($i != $id - 1 && $i != $id && $i != $id + 1 && $i < $length)
+        {
+          defaultPage($type, $id, '...');
+          defaultPage($type, $i, $i);
+        }
+      }
+    }
+    echo '</div>';
   }
 ?>
