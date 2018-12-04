@@ -89,15 +89,32 @@
 
 				$arrayOfFavorites[0] = getFromAttribute($arrayOfFavorites[0], 'login', 'favorites');
 				$arrayOfFavorites[1] = getFromAttribute($arrayOfFavorites[1], 'idProduct', 'favorites');
+
 				if(isset($_GET['type']))
 				{
-					for($i = 0; $i < count($arrayOfProduct[0]); $i++)
-					{
-						if($_GET['type'] == $arrayOfProduct[5][$i])
-						{
-							showProducts($arrayOfProduct[0][$i], $arrayOfProduct[1][$i], $arrayOfProduct[2][$i], $arrayOfProduct[3][$i], $arrayOfProduct[4][$i],  $arrayOfProduct[6][$i]);
-						}
+					$counter = 1;
+		      for($i = 0; $i < count($arrayOfProduct[0]) * 5; $i++)
+		      {
+						$i %= count($arrayOfProduct[0]);
+		        if($_GET['type'] == $arrayOfProduct[5][$i])
+		        {
+							showProducts($_GET['page'],
+							$arrayOfProduct[6][$i],
+							$arrayOfProduct[0][$i],
+							$arrayOfProduct[1][$i],
+							$arrayOfProduct[2][$i],
+							$arrayOfProduct[3][$i],
+							$arrayOfProduct[4][$i]);
+							$counter++;
+							if($counter == 5)
+							{
+								break;
+							}
+
 					}
+				}
+					showPages($_GET['page'], count($arrayOfProduct[0]), $_GET['type']);
+
 				}
 				else if(isset($_GET['id']))
 				{
@@ -140,7 +157,7 @@
 					{
 						echo '<div class="window_one">
 										<img src="'.$arrayOfData[1][$i].'" alt="'.$arrayOfData[0][$i].'" height="190px" width="190px">
-										<a href="index.php?type='.$arrayOfData[0][$i].'" class="price_product">цена XXX Р</a>
+										<a href="index.php?type='.$arrayOfData[0][$i].'&&page=1" class="price_product">цена XXX Р</a>
 									</div>';
 					}
 				}
@@ -158,7 +175,10 @@
 					}
 				}
 				$mysqli->close();
+
 			?>
+
+
 		</div>
 		<div class="banner">
 			<img src="img/logo/banner.jpg" alt="Спецпредложение">
