@@ -203,6 +203,9 @@
 				<p>Описание новости</p>
 			</div>
 		</div>
+		<div class="map">
+			<a href="https://yandex.ru/maps/2/saint-petersburg/?l=map&ll=30.211951%2C59.993259&mode=search&sll=30.211915%2C59.993482&source=wizgeo&text=Россия%2C%20Санкт-Петербург%2C%20Школьная%20улица%2C%2073к2&utm_medium=maps-desktop&utm_source=serp&z=16.1"><img src="img/logo/map.png" alt="КАРТА"></a>
+		</div>
 		<div class="creators">
 			<h5>2018 - Ишкинин Г.Г. & Тимохин А.М. 15П-2</h5>
 			<h6><? echo $dataOfWork[1][0]?></h6>
