@@ -82,21 +82,21 @@
     echo '<script>document.location.href="index.php?favorite=work"</script>';
   }
 
-  function defaultPage($type, $id, $title)
+  function defaultPage($type, $id, $title)//Стили
   {
-    echo '<div style="background: blue; width: 45px; height: 25px; float: left;">
-            <center><a href="index.php?type='.$type.'&page='.$id.'">'.$title.'</a></center>
+    echo '<div class="skroll_line">
+            <a href="index.php?type='.$type.'&page='.$id.'">'.$title.'</a>
           </div>';
   }
 
-  function activePage($type, $id, $title)
+  function activePage($type, $id, $title)//Стили
   {
-    echo '<div style="background: red; width: 45px; height: 25px; float: left;">
-            <center><a href="index.php?type='.$type.'&page='.$id.'">'.$title.'</a></center>
+    echo '<div class="skroll_line">
+            <a class="active" href="index.php?type='.$type.'&page='.$id.'">'.$title.'</a>
           </div>';
   }
 
-  function showPages($id, $length, $type)
+  function showPages($id, $length, $type)//Стили
   {
     echo '<div class="pages">';
     $length *= 34;
