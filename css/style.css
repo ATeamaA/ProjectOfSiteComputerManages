@@ -1,4 +1,4 @@
-﻿body {
+body {
 	font-family: 'Roboto', sans-serif;
 	width:1000px;
 	height: 1350px;
@@ -182,7 +182,21 @@ article {
 	width: 720px;
 	margin: auto;
 }
-
+.pages {
+	display: inline-block;
+	width: 690px;
+	text-align: center;
+}
+.skroll_line {
+	margin-left: auto;
+  	margin-right: auto;
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+}
+.active {
+	font-size: 30px;
+}
 /*footer*/
 
 footer {
@@ -204,4 +218,9 @@ footer {
 }
 .info h4, p {
 	margin: 15px;
+}
+.map {
+	height: 450px;
+	width: 950px;
+	margin-top: 20px;
 }
