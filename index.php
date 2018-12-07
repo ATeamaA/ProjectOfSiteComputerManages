@@ -72,7 +72,7 @@
 			foreach($arrayOfData[0] as $value)
 			{
 				echo '<div class="list_push">
-								<a href="index.php?type='.$value.'">'.$value.'</a><br>
+								<a href="index.php?type='.$value.'&&page=1">'.$value.'</a><br>
 							</div>';
 			}
 			echo '</div>';
