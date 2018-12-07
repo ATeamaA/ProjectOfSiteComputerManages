@@ -99,7 +99,7 @@
   function showPages($id, $length, $type)//Стили
   {
     echo '<div class="pages">';
-    $length *= 34;
+    $length *= 26;
     if($id <= 2)
     {
       for($i = 1; $i <= 3; $i++)
@@ -119,7 +119,7 @@
         defaultPage($type, $i, $i);
       }
     }
-    else if($id >= $length - 2)
+    else if($id >= 100 - 2 && 101 > $id)
     {
       defaultPage($type, '1', '1');
       for($i = 10; $i <= $length / 10; $i*=10)
@@ -127,7 +127,8 @@
         defaultPage($type, $id, '...');
         defaultPage($type, $i, $i);
       }
-      for($i = $length - 2; $i <= $length; $i++)
+      defaultPage($type, $id, '...');
+      for($i = 100 - 2; $i <= 100; $i++)
       {
         if($id == $i)
         {
